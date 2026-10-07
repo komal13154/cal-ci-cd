@@ -39,7 +39,6 @@ if (typeof document !== "undefined") {
 
     let firstNumber = "";
     let operator = "";
-    let secondNumber = "";
 
     buttons.forEach((button) => {
 
@@ -51,7 +50,6 @@ if (typeof document !== "undefined") {
             if (value === "AC") {
                 display.value = "";
                 firstNumber = "";
-                secondNumber = "";
                 operator = "";
                 return;
             }
@@ -81,7 +79,7 @@ if (typeof document !== "undefined") {
             // Equal
             if (value === "=") {
 
-                secondNumber = display.value;
+                const secondNumber = display.value;
 
                 const a = Number(firstNumber);
                 const b = Number(secondNumber);
@@ -90,11 +88,17 @@ if (typeof document !== "undefined") {
 
                 if (operator === "+") {
                     result = add(a, b);
-                } else if (operator === "-") {
+                }
+
+                if (operator === "-") {
                     result = subtract(a, b);
-                } else if (operator === "*") {
+                }
+
+                if (operator === "*") {
                     result = multiply(a, b);
-                } else if (operator === "/") {
+                }
+
+                if (operator === "/") {
                     try {
                         result = divide(a, b);
                     } catch (error) {
@@ -106,7 +110,6 @@ if (typeof document !== "undefined") {
                 display.value = result;
 
                 firstNumber = "";
-                secondNumber = "";
                 operator = "";
 
                 return;
