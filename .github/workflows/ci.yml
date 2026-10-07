@@ -27,7 +27,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-      - name: Run tests
-        run: npm test
+      
 
 # CI workflow
