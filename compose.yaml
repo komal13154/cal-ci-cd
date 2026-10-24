@@ -1,0 +1,10 @@
+services:
+  calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: calculator:compose
+    container_name: calc-compose
+    ports:
+      - "8082:80"
+    restart: unless-stopped
